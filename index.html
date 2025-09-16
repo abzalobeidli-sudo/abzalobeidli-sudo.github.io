@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abdulaziz Alobeidli</title>
+  <meta name="description" content="Portfolio of Abdulaziz Alobeidli — Cybersecurity student at ADPoly with a passion for security and technology." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0f14; --panel:#10161d; --muted:#9fb0c3; --text:#e6edf6;
+      --brand:#00e5ff; --brand-2:#7b61ff; --ok:#22c55e; --warn:#f59e0b; --ring:0 0 0 3px rgba(0,229,255,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif; color:var(--text);
+      background:radial-gradient(1200px 600px at 80% -10%, rgba(123,97,255,.18), transparent 60%),
+                 radial-gradient(900px 500px at -10% 20%, rgba(0,229,255,.14), transparent 60%), var(--bg);
+      line-height:1.6;}
+    a{color:var(--brand); text-decoration:none}
+    a:hover{opacity:.9}
+
+    .container{max-width:1100px; margin:0 auto; padding:0 20px}
+    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.2) blur(8px); background:rgba(11,15,20,.6); border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.5px}
+    .brand .dot{width:10px; height:10px; border-radius:50%; background:linear-gradient(135deg,var(--brand),var(--brand-2)); box-shadow:0 0 18px rgba(0,229,255,.6)}
+    .nav a{color:var(--text)}
+    .nav-links{display:flex; gap:18px}
+    .nav-links a{padding:8px 10px; border-radius:10px; font-weight:600; color:var(--muted)}
+    .nav-links a.active, .nav-links a:hover{color:var(--text); background:rgba(255,255,255,.06)}
+    .menu-btn{display:none}
+
+    .hero{padding:80px 0 50px}
+    .hero-grid{display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center}
+    .pill{display:inline-flex; align-items:center; gap:10px; padding:8px 12px; border:1px solid rgba(255,255,255,.12); border-radius:999px; color:var(--muted); background:rgba(255,255,255,.03)}
+    .pill .ping{width:8px; height:8px; border-radius:50%; background:var(--brand); box-shadow:0 0 0 6px rgba(0,229,255,.15)}
+    h1{font-size:44px; line-height:1.15; margin:14px 0 10px}
+    .lead{font-size:18px; color:var(--muted); margin:0 0 24px}
+    .cta{display:flex; gap:12px; flex-wrap:wrap}
+    .btn{padding:12px 16px; border-radius:14px; border:1px solid rgba(255,255,255,.14); background:linear-gradient(135deg, rgba(0,229,255,.15), rgba(123,97,255,.12)); color:var(--text); font-weight:700}
+    .btn:hover{box-shadow:var(--ring)}
+    .btn.ghost{background:transparent; color:var(--muted)}
+    .card{border:1px solid rgba(255,255,255,.08); background:var(--panel); border-radius:18px; padding:18px; box-shadow:0 10px 30px rgba(0,0,0,.25)}
+
+    section{padding:64px 0}
+    section h2{font-size:28px; margin:0 0 14px}
+    .muted{color:var(--muted)}
+    .grid{display:grid; gap:18px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+
+    .badge{display:inline-flex; align-items:center; gap:8px; padding:8px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.03); font-size:13px; margin:4px 8px 4px 0}
+    .dot-ok{width:8px; height:8px; border-radius:50%; background:var(--ok)}
+
+    footer{padding:40px 0; color:var(--muted); border-top:1px solid rgba(255,255,255,.06)}
+
+    @media (max-width: 900px){.hero-grid{grid-template-columns:1fr} .grid.cols-3{grid-template-columns:1fr 1fr}}
+    @media (max-width: 640px){.nav-links{display:none} .menu-btn{display:inline-flex; align-items:center; gap:8px; padding:8px 10px; border-radius:10px; border:1px solid rgba(255,255,255,.14); background:rgba(255,255,255,.04)} .grid.cols-3,.grid.cols-2{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="dot"></span> Abdulaziz&nbsp;Alobeidli</div>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#coursework">Coursework</a>
+        <a href="#skills">Skills</a>
+        <a href="#certs">Certifications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">☰ Menu</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="pill"><span class="ping"></span> Cybersecurity Student • ADPoly</span>
+          <h1>Hi, I’m <span style="background:linear-gradient(90deg,var(--brand),var(--brand-2)); -webkit-background-clip:text; background-clip:text; color:transparent">Abdulaziz Alobeidli</span></h1>
+          <p class="lead">I am a student at Abu Dhabi Polytechnic (ADPoly) studying Cybersecurity. I have a strong passion for protecting systems, analyzing threats, and continuously learning about new technologies in the security field. I am also an active member of IEEE, engaging with a global community of technology and engineering professionals.</p>
+          <div class="cta">
+            <a class="btn" href="#coursework">See Coursework</a>
+            <a class="btn ghost" href="#contact">Contact</a>
+          </div>
+        </div>
+        <div class="card" aria-label="SOC snapshot" title="recent detections">
+          <div style="font-family:ui-monospace,Menlo,Consolas,monospace;color:#bfe4ff">
+            <div>$ whoami</div>
+            <div>student@adpoly</div>
+            <div>role: cybersecurity</div>
+            <div>member: IEEE</div>
+            <div>passion: defending systems & networks</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- about -->
+    <section id="about">
+      <div class="container">
+        <h2>About</h2>
+        <p class="muted">Cybersecurity student at ADPoly with a passion for network defense, database security, and incident response. Hands-on with Wireshark, ACLs/VLANs/OSPF, Oracle & SQL Server security, and SIEM workflows. I enjoy learning, practicing, and applying security concepts to real-world scenarios. Proud member of IEEE, actively involved in professional development and knowledge sharing.</p>
+        <div class="grid cols-3">
+          <div class="card"><strong>Focus</strong><br/><span class="muted">SOC Tier-1/2 • IR • Database & Network Security</span></div>
+          <div class="card"><strong>Tooling</strong><br/><span class="muted">Wireshark, Splunk/ELK, Zeek, Suricata, nmap, Nessus, OSQuery</span></div>
+          <div class="card"><strong>Methods</strong><br/><span class="muted">MITRE ATT&CK, NIST CSF/800-61, Kill Chain, PCAP analysis</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- coursework -->
+    <section id="coursework">
+      <div class="container">
+        <h2>Relevant Coursework</h2>
+        <div class="grid cols-2">
+          <div class="card">
+            <strong>Network Security</strong>
+            <ul>
+              <li>Configuring ACLs, NAT, VLANs, OSPF, VRRP</li>
+              <li>Firewall rules and IPS/IDS basics</li>
+              <li>Wireshark labs for packet analysis</li>
+            </ul>
+          </div>
+          <div class="card">
+            <strong>Database Security</strong>
+            <ul>
+              <li>Oracle VPD, TDE, RMAN backup & recovery</li>
+              <li>SQL Server encryption and auditing</li>
+              <li>User roles and least-privilege management</li>
+            </ul>
+          </div>
+          <div class="card">
+            <strong>Applied Cryptography</strong>
+            <ul>
+              <li>RSA, Vigenère, Caesar, Atbash, Euclidean algorithm</li>
+              <li>OpenSSL labs for encryption & certificates</li>
+              <li>Hashing and digital signatures</li>
+            </ul>
+          </div>
+          <div class="card">
+            <strong>Incident Response & SOC</strong>
+            <ul>
+              <li>Phishing analysis and host triage playbooks</li>
+              <li>SIEM correlation and log triage (Splunk/ELK)</li>
+              <li>Threat hunting and MITRE ATT&CK mapping</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- skills -->
+    <section id="skills">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="grid cols-2">
+          <div class="card">
+            <strong>Blue Team</strong>
+            <ul>
+              <li>SIEM triage (Splunk/ELK), log parsing, correlation rules</li>
+              <li>Packet analysis with Wireshark/Zeek</li>
+              <li>Threat intel enrichment & ATT&CK mapping</li>
+            </ul>
+          </div>
+          <div class="card">
+            <strong>Security Engineering</strong>
+            <ul>
+              <li>Network controls: ACLs, VLANs, OSPF, basic IPS/IDS</li>
+              <li>Database security: TDE, RMAN, roles, auditing</li>
+              <li>Scripting basics: Bash/PowerShell/JS for automation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- certifications -->
+    <section id="certs">
+      <div class="container">
+        <h2>Certifications</h2>
+        <p class="muted">Aligned with Naser’s track.</p>
+        <div>
+          <span class="badge"><span class="dot-ok"></span> CompTIA Security+ (SY0-701)</span>
+          <span class="badge"><span class="dot-ok"></span> CEH (Certified Ethical Hacker)</span>
+          <span class="badge"><span class="dot-ok"></span> (ECES) EC-Council Certified Encryption Specialist</span>
+          <span class="badge"><span class="dot-ok"></span> Huawei HCIA</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- contact -->
+    <section id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <div class="grid cols-2">
+          <form class="card" id="contactForm" aria-label="contact form">
+            <label for="name">Name</label>
+            <input id="name" name="name" placeholder="Your name" required class="input" />
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required class="input" />
+            <label for="msg">Message</label>
+            <textarea id="msg" name="message" rows="5" placeholder="How can I help?" class="input"></textarea>
+            <button class="btn" type="submit">Send</button>
+            <small class="muted">This demo form uses client-side validation only.</small>
+          </form>
+          <div class="card">
+            <strong>Links</strong>
+            <ul>
+              <li>Email: <a href="mailto:abz.alobeidli@outlook.com">abz.alobeidli@outlook.com</a></li>
+              <li>GitHub: <a href="#">github.com/abdulaziz</a></li>
+              <li>LinkedIn: <a href="https://www.linkedin.com/in/abdulaziz-alobeidli-a9737a1b8" target="_blank">linkedin.com/in/abdulaziz-alobeidli-a9737a1b8</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Abdulaziz Alobeidli. All rights reserved.</div>
+  </footer>
+
+  <style>
+    .input{width:100%; margin:6px 0 14px; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.1); border-radius:12px; padding:12px 14px; color:var(--text)}
+    .input:focus{outline:none; box-shadow:var(--ring); border-color:rgba(0,229,255,.5)}
+    label{font-size:14px; color:var(--muted)}
+  </style>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn?.addEventListener('click',()=>{
+      const shown = navLinks.style.display === 'flex';
+      navLinks.style.display = shown ? 'none' : 'flex';
+      navLinks.style.flexDirection = 'column';
+      navLinks.style.gap = '10px';
+      navLinks.style.padding = '10px 0';
+    });
+
+    const links = document.querySelectorAll('nav a');
+    links.forEach(a=>a.addEventListener('click',e=>{ e.preventDefault(); document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'}); }));
+    const sections = [...document.querySelectorAll('section[id]')];
+    const setActive = () => {
+      const y = scrollY + innerHeight/3; let current = sections[0]?.id;
+      for(const s of sections){ const r = s.getBoundingClientRect(); const top = r.top + scrollY; if(top <= y) current = s.id; }
+      document.querySelectorAll('.nav-links a').forEach(el=>{ el.classList.toggle('active', el.getAttribute('href') === '#'+current); });
+    };
+    addEventListener('scroll', setActive);
+    addEventListener
